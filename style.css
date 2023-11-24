@@ -1,0 +1,173 @@
+/* Custom CSS for Header */
+.navbar {
+    border-radius: 0; /* Remove border-radius */
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    font-size: 18px;
+}
+
+/* Style for the Article */
+article {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+article img {
+    max-width: 98%;
+}
+
+.image-caption {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Style the user profile dropdown */
+.dropdown-menu {
+    background-color: #333;
+}
+
+.dropdown-menu a {
+    color: #fff;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+
+.nav-item.active a {
+    font-weight: 600;
+    color: #fff;
+}
+
+.container p {
+    margin-bottom: 0; /* Remove margin below the copyright text */
+}
+
+.text-light {
+    color: #ffffff !important; /* Ensure text is always white */
+}
+
+/* Statistics Cards Design */
+.card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.005);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 570;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.card-img-top {
+    margin-top: 20px;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.custom-btn {
+    margin-right: 8px;
+}
+
+/* Custom CSS for styling the company logos carousel */
+#companyCarousel {
+    max-width: 500px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the carousel horizontally */
+}
+
+.carousel-indicators li {
+    background-color: #007bff; /* Indicator color */
+    border: 2px solid #fff; /* Indicator border color */
+    border-radius: 50%; /* Make indicators circular */
+    width: 12px; /* Indicator width */
+    height: 12px; /* Indicator height */
+    margin: 0 5px; /* Spacing between indicators */
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+.carousel-indicators .active {
+    background-color: #fff; /* Active indicator color */
+}
+
+.carousel-inner {
+    text-align: center; /* Center-align the images */
+}
+
+.carousel-inner img {
+    max-width: 100%; /* Responsive image width */
+    height: auto; /* Maintain image aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Remove extra spacing below images */
+}
+
+#timer {
+  font-size: 42px;
+  margin-left: 22px;
+}
+
+/* Bug bounty form CSS stylings */
+.bug-bounty-card {
+    margin-top: 20px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bug-bounty-card .card-title {
+    font-size: 18px;
+}
+
+@keyframes textAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.animate {
+    animation: textAnimation 1s infinite;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Footer Stylings */
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+    .card:hover {
+        transform: scale(1);
+        transition: transform 0.3s;
+    }
+}

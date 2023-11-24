@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITU money maker</title>
+    <link rel="icon" type="image/x-icon" href="imgs/data-logo.png">
+    <!-- Bootstrap 5 Connection -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- CSS Styling Connection -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Datatables Connection -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
+</head>
+<body>
+	<!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">💵 AITU money maker</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">main</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="analytics.html">Easytap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="jumis.html">Jumisbar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="naimi.html">Naimi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="settings.html">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quiz.html">Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container mt-4">
+        <h2>Settings</h2>
+        <!-- Settings Section-->
+        <div class="card settings-card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="language" class="card-title">Language:</label>
+                    <select class="form-control" id="language">
+                        <option value="en">English</option>
+                        <option value="ru">Russian</option>
+                        <option value="kz">Kazakh</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="textSize" class="card-title">Text Size:</label>
+                    <input type="range" class="form-control-range" id="textSize" min="12" max="24" step="1">
+                </div>
+                <br>
+                <div id="text">
+                    <p>
+                        <b>AITU money maker</b>Welcome to the ultimate guide for students seeking ways to earn money while pursuing their education. Being a student often means juggling academic responsibilities while managing limited finances. But fear not! There are numerous opportunities available to supplement your income and gain valuable experience along the way.
+
+                        Explore various flexible options tailored to fit your schedule and interests. From part-time jobs, freelance gigs, and internships to online tutoring, content creation, and remote work, there's a diverse array of avenues waiting for you. These opportunities not only offer financial support but also foster skill development, networking, and practical insights into different industries.
+                        
+                        Discover how to strike the right balance between studies and work, optimizing your time to maximize both academic success and financial stability. Learn tips and tricks from fellow students who have successfully navigated the challenges of earning while learning.
+                        
+                        Empower yourself with resources, insights, and strategies to make informed choices about your financial future. Whether you're looking for short-term gigs or long-term career-building opportunities, this platform is your go-to destination for unlocking the potential to earn, grow, and thrive as a student.
+                        
+                        Start exploring the possibilities today and embark on a journey to not just make money but also gain invaluable skills and experiences that will shape your future success.
+                    </p>
+                </div>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="animations">
+                    <label class="form-check-label" for="animations">Animations</label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="darkMode">
+                    <label class="form-check-label" for="darkMode">Dark Mode</label>
+                </div>
+                <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="musicCheckbox">
+                        <label class="form-check-label" for="musicCheckbox">Music</label>
+                        <audio id="music" src="music/piano_beethoven.mp3" loop></audio>
+                    </div>
+                <br>
+                <div id="timer">00:00:00</div>
+                <div class="d-flex justify-content-begin mt-3">
+                    <button class="btn btn-primary" onclick="startTimer()" id="startBtn">Start</button> &nbsp
+                    <button class="btn btn-danger" onclick="stopTimer()" id="stopBtn">Stop</button> &nbsp
+                    <button class="btn btn-secondary" onclick="resetTimer()" id="resetBtn">Reset</button> &nbsp
+                    <button class="btn btn-warning" onclick="counter()" id="counter">0</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bug Bounty Form -->
+        <div class="card bug-bounty-card">
+            <div class="card-body">
+                <h2 class="card-title">Bug Bounty Program</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bugDescription" class="form-label">Bug Description</label>
+                        <textarea class="form-control" id="bugDescription" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 AITU money maker. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a class="text-light" href="#">Privacy Policy</a> |
+                    <a class="text-light" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript and Additional Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
+    <!-- Include DataTables JavaScript -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+	<!-- Include jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- Include Bootstrap JavaScript (which includes Popper.js) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+
+            $('#addDataBtn').click(function () {
+                alert('Add new data logic goes here.');
+            });
+        });
+
+        // Change Language Settings
+        const languageSelect = document.getElementById('language');
+        const contentParagraph = document.getElementById('text');
+        
+        languageSelect.addEventListener('change', function() {
+            const selectedLanguage = languageSelect.value;
+
+            const languageText = {
+                'en': `<b>AITU money maker</b> Welcome to the ultimate guide for students seeking ways to earn money while pursuing their education. Being a student often means juggling academic responsibilities while managing limited finances. But fear not! There are numerous opportunities available to supplement your income and gain valuable experience along the way.
+
+Explore various flexible options tailored to fit your schedule and interests. From part-time jobs, freelance gigs, and internships to online tutoring, content creation, and remote work, there's a diverse array of avenues waiting for you. These opportunities not only offer financial support but also foster skill development, networking, and practical insights into different industries.
+
+Discover how to strike the right balance between studies and work, optimizing your time to maximize both academic success and financial stability. Learn tips and tricks from fellow students who have successfully navigated the challenges of earning while learning.
+
+Empower yourself with resources, insights, and strategies to make informed choices about your financial future. Whether you're looking for short-term gigs or long-term career-building opportunities, this platform is your go-to destination for unlocking the potential to earn, grow, and thrive as a student.
+
+Start exploring the possibilities today and embark on a journey to not just make money but also gain invaluable skills and experiences that will shape your future success.`,
+                'ru': `<b>AITU money maker</b> - Добро пожаловать в самое полное руководство для студентов, которые ищут способы заработка во время обучения. Быть студентом часто означает балансировать между учебными обязанностями и ограниченными финансами. Но не отчаивайтесь! Существует множество возможностей для дополнительного заработка и приобретения ценного опыта.
+
+Исследуйте различные гибкие варианты, подходящие для вашего расписания и интересов. От подработок, фриланса и стажировок до онлайн-репетиторства, создания контента и удаленной работы — есть множество разнообразных путей, ждущих вас. Эти возможности не только предлагают финансовую поддержку, но и способствуют развитию навыков, расширяют кругозор и дают практический опыт в различных отраслях.
+
+Узнайте, как найти правильный баланс между учебой и работой, оптимизируя своё время для максимального успеха как в учёбе, так и в финансовой стабильности. Получите советы и хитрости от других студентов, которые успешно справились с вызовами заработка во время учёбы.
+
+Оснаститесь ресурсами, идеями и стратегиями, чтобы принимать осознанные решения о своём финансовом будущем. Независимо от того, ищете ли вы временные подработки или возможности для долгосрочного карьерного роста, эта платформа — ваш главный источник для раскрытия потенциала заработка, развития и процветания в статусе студента.
+
+Начните изучать возможности уже сегодня и отправляйтесь в путь не только заработать, но и получить ценные навыки и опыт, которые сформируют ваш будущий успех`,
+                'kz': `<b>AITU money maker</b> - Студент болып оқуға жеткізетін уақытта ақша табу туралы анықтамалыққа қош келдіңіз! Оқушы болу қатарында қаншалық білім алып, бірден мемлекеттік ресурстарды басқаруды керек болатындықтан, ақша келісімі өмір салтүстіктерін бағалау күніне қатынасу мүмкіндіктерін шегеді. Бірақ қорықпаңыз! Сізге оқуыңызды қамтитын барлық мамандандыруларды жасауға және бірінші білім алу үшін алғысымен төлем алатын еңбектерді табуға арналған көптеген мүмкіндіктер бар.
+
+Сіздің кестелеріңізге және қызығушыларыңызға қолайлы болатын кездесулерге арналған алғашқы жұмыстар, фриланс істер мен интернаттық стажировкалардан бастап онлайн оқытуға, мазмұн жасауға мен қашықтан жұмыс істеуге дейін көптеген түрлі мүмкіндіктер бар. Бұл мүмкіндіктер тек ақылы ресурстар қалыптаспен, бірлікті білім алу қабілеттерін дамытуға, өзара қарым-қатынас жасауға және көмектесуге де жол ашады.
+
+Білім алу және істеу арасында дұрыс таразды табу үшін, уақытыңызды еңдірген, оқу және жұмыс орындарының ең жақсы түрлерін көмекші болатын сілтемелер мен күштерді таныңыз. Оқушылардың тәжірибелерінен көп білім алыңыз.
+
+Өзіңіздің ақылы басқарудағы финансалық келісіміңіз туралы білім, дерекқорлықтар мен жоспарларды қолданып, жауапкершілікті сақтайтын әр түрлі шешімдерге жетуге болатын ресурстар, түйіндемелер мен әділеттермен күшкеніңіз. Әлдеқайда, келесі тұтынуыңызға байланысты мұғалімдермен бірге көпіршіктің көрсеткіштерімен, жеңіл мәліметтермен және жағдайлармен жұмыс істеу туралы мәліметтермен енгізуге болатын мүмкіндіктеріңізге белсендік сыйлайды.
+
+Бұл платформа оқушы статусында жаңалықтар алу, дамыту және даму мүмкіндіктерін түрлі белгілі мүмкіндіктердің жолындағыңызды ашуға арналған сіздің басты орынбасарыңыз.` 
+            };
+
+            contentParagraph.innerHTML = languageText[selectedLanguage];
+        });
+
+        // Text Size Settings
+        const textSizeInput = document.getElementById('textSize');
+
+        textSizeInput.addEventListener('input', function() {
+            const textSize = this.value + 'px';
+            contentParagraph.style.fontSize = textSize;
+        });
+
+        // Animation & Dark Mode Settings
+        const animationsCheckbox = document.getElementById('animations');
+        const darkModeCheckbox = document.getElementById('darkMode');
+
+        function animateText() {
+            contentParagraph.classList.toggle('animate');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        animationsCheckbox.addEventListener('change', function() {
+            if (animationsCheckbox.checked) {
+                contentParagraph.classList.add('animate');
+            } else {
+                contentParagraph.classList.remove('animate');
+            }
+        });
+
+        darkModeCheckbox.addEventListener('change', function() {
+            toggleDarkMode();
+        });
+
+        // Music Settings
+        const musicCheckbox = document.getElementById('musicCheckbox');
+        const music = document.getElementById('music');
+
+        musicCheckbox.addEventListener('change', function() {
+            if (musicCheckbox.checked) {
+                music.play(); // Music Start
+            } else {
+                music.pause(); // Music Pause
+            }
+        });
+
+        // Timer Settings
+        let interval;
+        let cnt = 0;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function counter() {
+            cnt++;
+            document.getElementById("counter").textContent = cnt;
+        }
+
+        function startTimer() {
+            if(!interval) {
+                interval = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        function resetTimer() {
+            clearInterval(interval);
+            interval = null;
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            cnt = 0;
+            document.getElementById("counter").textContent = cnt;
+            updateDisplay();
+        }
+
+        function updateTimer() {
+            seconds++;
+            if(seconds == 60) {
+                seconds = 0;
+                minutes++;
+                if(minutes == 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const formattedTime = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
+            document.getElementById("timer").textContent = formattedTime;
+        }
+
+        function pad(value) {
+            return value < 10 ? "0" + value : value;
+        }
+    </script>
+</body>
+</html>
